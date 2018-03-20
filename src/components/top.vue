@@ -1,11 +1,11 @@
 <template>
-    <header class="clear">
+    <header class="m-header clear">
         <div class="g-center-wrapper">
             <h1 class="nav-logo">
                 <a href="" title="锤子科技官网">Smartisan</a>
             </h1>
             <ul class="nav-list">
-                <li><a class="active" href="">在线商城</a></li>
+                <li><router-link class="active" to="/">在线商城</router-link></li>
                 <li><router-link to="/JGPro2">坚果 Pro2</router-link></li>
                 <li><a href="">坚果Pro</a></li>
                 <li><a href="">Smartisan OS</a></li>

@@ -1,12 +1,3 @@
 <template>
-    <div class="g-container">
-        <router-view></router-view>
-    </div>
+    <router-view></router-view>
 </template>
-
-<script>
-
-</script>
-
-<style scoped>
-</style>

@@ -37,37 +37,17 @@
                     <ul class="goods-list">
                         <li v-for="item in hotList" :key="item.id">
                             <img :src="item.imgUrl" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
+                            <h3 class="title">{{item.title}}</h3>
                             <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item active">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
+                                <li class="" v-for="color in item.color" :key="color">
                                     <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
+                                        <span :style="{backgroundColor:color}"></span>
                                     </div>
                                 </li>
                             </ul>
                             <p class="price">
                                 <i>¥</i>
-                                <span>99.00</span>
+                                <span>{{item.price}}</span>
                             </p>
                             <div class="operator">
                                 <span class="detail-btn">
@@ -353,8 +333,7 @@ export default {
       msg: 'hello',
       autoplaySpeed: 3000,
       activityList: [],
-      hotList: [],
-      lista: [0, 1, 2, 3]
+      hotList: []
     }
   },
   components: {
@@ -366,39 +345,16 @@ export default {
     Axios.get('http://www.test.com/home').then(function (response) {
       var aList = response.data.activityList
       var hList = response.data.hotList
+      console.log(hList)
       for (let i = 0; i < aList.length; i++) {
         _self.activityList.push(aList[i].url)
       }
       for (let i = 0; i < hList.length; i++) {
         _self.hotList.push(hList[i])
       }
-      console.log(_self.hotList)
     })
   },
   methods: {
-    goodsMouseover: function (event) {
-      event = window.event
-      console.dir(event.target)
-      this.goodsFn(event, true)
-    },
-    goodsMouseout: function (event) {
-      event = window.event
-      this.goodsFn(event, false)
-    },
-    goodsFn: (el, showBtn = true) => {
-      event.stopPropagation()
-      var childList = el.target.parentNode.children
-      for (const item of childList) {
-        if (item.className === 'price') {
-          if (showBtn) item.style.opacity = '0'
-          else item.style.opacity = '1'
-        }
-        if (item.className === 'operator') {
-          if (showBtn) item.style.opacity = '1'
-          else item.style.opacity = '0'
-        }
-      }
-    }
   }
 }
 </script>

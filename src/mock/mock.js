@@ -10,6 +10,8 @@ Mock.mock('http://www.test.com/home', {
     'title': '@ctitle(5,20)',
     'time': '@date',
     'price': '@integer(1,99999).00',
-    'id|+1': 1
+    'id|+1': 1,
+    'color|5': ['@color'],
+    'url': '@url("http","www.test.com")'
   }]
 })

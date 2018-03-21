@@ -7,6 +7,7 @@
 <script>
 import PageTop from './top.vue'
 import HeaderMenu from './headerMenu.vue'
+import '../mock/mock'
 export default {
   components: {PageTop, HeaderMenu}
 }

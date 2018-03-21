@@ -113,6 +113,8 @@
     text-align: center;
 }
 .dot-list {
+    position: relative;
+    z-index: 20;
     margin-top: 40px;
     text-align: center;
 }
@@ -128,7 +130,11 @@
     border-radius: 50%;
     text-align: center;
     line-height: 16px;
-    border: 1px solid #b2b2b2;
+    border: 1px solid #e5e5e5;
+}
+.dot-list li:hover .dot-item {
+    border-width: 3px;
+    border-color: #c5c5c5;
 }
 .dot-list .dot-item.active {
     border-width: 3px;

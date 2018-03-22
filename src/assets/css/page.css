@@ -74,6 +74,9 @@
     overflow: hidden;
     border-right: 1px solid rgba(0, 0, 0, .14);
 }
+.goods-list > li:nth-child(4n) ~ li {
+    border-top: 1px solid rgba(0, 0, 0, .14);
+}
 .goods-list > li.double {
     width: 50%;
 }
@@ -118,31 +121,28 @@
     margin-top: 40px;
     text-align: center;
 }
-.dot-list li {
-    display: inline-block;
-    margin: 0 6px;
-}
 .dot-list .dot-item {
     position: relative;
+    z-index: 10;
+    display: inline-block;
     width: 16px;
     height: 16px;
+    margin: 0 6px;
     overflow: hidden;
     border-radius: 50%;
     text-align: center;
     line-height: 16px;
     border: 1px solid #e5e5e5;
 }
-.dot-list li:hover .dot-item {
-    border-width: 3px;
-    border-color: #c5c5c5;
-}
 .dot-list .dot-item.active {
     border-width: 3px;
+    border-color: #c5c5c5;
 }
 .dot-list .dot-item span {
     position: absolute;
     left: 50%;
     top: 50%;
+    z-index: -1;
     display: inline-block;
     width: 8px;
     height: 8px;

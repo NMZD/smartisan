@@ -39,11 +39,14 @@
                             <img :src="item.imgUrl" alt="">
                             <h3 class="title">{{item.title}}</h3>
                             <ul class="dot-list">
-                                <li class="" v-for="color in item.color" :key="color">
-                                    <div class="dot-item">
-                                        <span :style="{backgroundColor:color}"></span>
-                                    </div>
-                                </li>
+                                <template v-for="(color, index) in item.color">
+                                    <li class="dot-item active" :key="index" v-if="index == 0" @mouseover="dotHover()">
+                                        <span :style="{backgroundColor: color}"></span>
+                                    </li>
+                                    <li class="dot-item" :key="index" v-else  @mouseover="dotHover()">
+                                        <span :style="{backgroundColor: color}"></span>
+                                    </li>
+                                </template>
                             </ul>
                             <p class="price">
                                 <i>¥</i>
@@ -60,262 +63,42 @@
                     </ul>
                 </div>
             </section>
-            <section class="home-goods-panel">
+            <section class="home-goods-panel" v-for="(list, index) in floorsList" :key="index">
                 <header class="home-goods-panel-head">
-                    <h2 class="name">净化器级配件</h2>
+                    <h2 class="name">{{list.name}}</h2>
                 </header>
                 <div class="goods-list-wrapper">
                     <ul class="goods-list">
-                        <li class="double">
-                            <img src="../assets/img/pinzhiloucengkongjing.webp" alt="">
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/kouzhao.webp" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item active">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>¥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/activity_img1.png" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>￥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/activity_img1.png" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>￥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/activity_img1.png" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>￥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/activity_img1.png" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>￥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
-                        <li>
-                            <img src="../assets/img/activity_img1.png" alt="">
-                            <h3 class="title">畅呼吸防护口罩（花粉、粉尘、PM2.5、病菌）</h3>
-                            <ul class="dot-list">
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                                <li class="">
-                                    <div class="dot-item">
-                                        <span></span>
-                                    </div>
-                                </li>
-                            </ul>
-                            <p class="price">
-                                <i>￥</i>
-                                <span>99.00</span>
-                            </p>
-                            <div class="operator">
-                                <span class="detail-btn">
-                                    <a href="">查看详情</a>
-                                </span>
-                            </div>
-                            <a href=""></a>
-                        </li>
+                        <template v-for="(item, index) in list.list">
+                            <li class="double" v-if="index == 0" :key="index">
+                                <img :src="item.imgUrl" alt="">
+                                <a href=""></a>
+                            </li>
+                            <li v-else :key="index">
+                                <img :src="item.imgUrl" alt="">
+                                <h3 class="title">{{item.title}}</h3>
+                                <ul class="dot-list">
+                                    <template v-for="(color, index) in item.color">
+                                        <li class="dot-item active" :key="index" v-if="index == 0" @mouseover="dotHover()">
+                                            <span :style="{backgroundColor: color}"></span>
+                                        </li>
+                                        <li class="dot-item" :key="index" v-else  @mouseover="dotHover()">
+                                            <span :style="{backgroundColor: color}"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <p class="price">
+                                    <i>¥</i>
+                                    <span>{{item.price}}</span>
+                                </p>
+                                <div class="operator">
+                                    <span class="detail-btn">
+                                        <a href="">查看详情</a>
+                                    </span>
+                                </div>
+                                <a href=""></a>
+                            </li>
+                        </template>
                     </ul>
                 </div>
             </section>
@@ -333,7 +116,8 @@ export default {
       msg: 'hello',
       autoplaySpeed: 3000,
       activityList: [],
-      hotList: []
+      hotList: [],
+      floorsList: []
     }
   },
   components: {
@@ -345,16 +129,31 @@ export default {
     Axios.get('http://www.test.com/home').then(function (response) {
       var aList = response.data.activityList
       var hList = response.data.hotList
-      console.log(hList)
+      var fList = response.data.floorsList
       for (let i = 0; i < aList.length; i++) {
         _self.activityList.push(aList[i].url)
       }
       for (let i = 0; i < hList.length; i++) {
         _self.hotList.push(hList[i])
       }
+      for (let i = 0; i < fList.length; i++) {
+        _self.floorsList.push(fList[i])
+      }
     })
   },
   methods: {
+    dotHover: (event = window.event) => {
+      event.stopPropagation()
+      let dotList = event.currentTarget.parentNode.children
+      for (let i = 0; i < dotList.length; i++) {
+        dotList[i].className = 'dot-item'
+      }
+      if (event.target.tagName === 'SPAN') {
+        event.target.parentNode.className += ' active'
+      } else {
+        event.target.className += ' active'
+      }
+    }
   }
 }
 </script>

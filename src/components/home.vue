@@ -103,11 +103,13 @@
                 </div>
             </section>
         </div>
+        <PageFooter></PageFooter>
     </div>
 </template>
 <script>
 import PageTop from './top.vue'
 import HeaderMenu from './headerMenu.vue'
+import PageFooter from './footer'
 import '../mock/mock.js'
 import Axios from 'axios'
 export default {
@@ -122,7 +124,8 @@ export default {
   },
   components: {
     PageTop,
-    HeaderMenu
+    HeaderMenu,
+    PageFooter
   },
   mounted () {
     var _self = this

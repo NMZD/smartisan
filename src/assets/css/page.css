@@ -56,6 +56,12 @@
     line-height: 30px;
     font-size: 30px;
 }
+.hot-toggle span {
+    cursor: pointer;
+}
+.hot-toggle span.disabled {
+    cursor: default;
+}
 .toggle-arrow {
     color: #666;
 }

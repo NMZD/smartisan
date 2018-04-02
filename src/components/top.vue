@@ -1,5 +1,5 @@
 <template>
-    <header class="m-header clear">
+    <header class="m-header clearfix">
         <div class="g-center-wrapper">
             <h1 class="nav-logo">
                 <a href="" title="锤子科技官网">Smartisan</a>
